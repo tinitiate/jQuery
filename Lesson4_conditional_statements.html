@@ -1,0 +1,95 @@
+<!-- 
+---
+title: jQuery Conditional Statements
+metadata:
+    description: 'jQuery Conditional Statements'
+    keywords: 'jQuery Conditional Statements, if else, example code, tutorials'
+author: Venkata Bhattaram / tinitiate.com
+code-alias: jquery-conditional-statements
+slug: jquery/basics/conditional-statements
+---
+-->
+<!--
+# jQuery Conditional sstatements
+* Conditional statements are used to perform various actions, based on different 
+  conditions that are set to execute each action.
+* IF, ELSE IF, ELSE and SWITCH are the conditional statements supported by 
+  javascript/jquery.
+```
+-->
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    </head>
+    <body>
+        <script>
+            // IF ELSE STATEMENT
+            // * Only one of the conditions is executed.
+            // * Also note "ELSE IF" and else are optional.
+            // * "ELSE" will not have any condition its the default execution if and 
+            //    when all the above conditions are not true.
+            l_var = 100;
+            
+            if(l_var == 100) {
+                $(document.body).append("l_var is 100 <br>");
+            }
+            else if(l_var == 100) {
+                $(document.body).append("l_var is 100 MESSAGE 2<br>");
+            }
+            else if(l_var == 200) {
+                $(document.body).append("l_var is 200 <br>");
+            }
+            else {
+                $(document.body).append("l_var is something else <br>");
+            }
+
+
+            // SWITCH STATEMENT
+            // * In the switch statement the input value is matched with a "CASE" 
+            //   code block, And once the match is found that code block is executed.
+            // * The BREAK keyword after each of the case makes sure that the other 
+            //   CASE statments preceeding the success condition are not executed.
+
+            
+            // SWITCH CASE example value with integer as CASE value
+            l_case_value = 3;
+            
+            switch (l_case_value) {
+
+                case 1:
+                    $(document.body).append("This is CASE 1 <br>");
+                    break;
+                case 2:
+                    $(document.body).append("This is CASE 2 <br>");
+                    break;
+                case 3:
+                    $(document.body).append("This is CASE 3 <br>");
+                    break;  // "break" will make sure below CASEs are not executed
+                case 4:
+                    $(document.body).append("This is CASE 4 <br>");
+                    break;
+            }
+            
+            
+            // SWITCH CASE example value with STRING as CASE value
+            str_case_value = 'jQuery';
+            
+            switch (str_case_value) {
+
+                case 'HTML':
+                    $(document.body).append("This is HTML case <br>");
+                    break;
+                case 'jQuery':
+                    $(document.body).append("This is jQuery case <br>");
+                    break;
+                case 'CSS':
+                    $(document.body).append("This is CSS case <br>");
+                    break;  // "break" will make sure below CASEs are not executed
+            }
+            
+        </script>
+    </body>
+</html>
+<!--
+```
+-->

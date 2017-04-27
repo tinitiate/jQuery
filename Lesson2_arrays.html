@@ -1,0 +1,131 @@
+<!--
+---
+title: jQuery Variables
+metadata:
+    description: 'jQuery basics variables, arrays and objects'
+    keywords: 'jQuery basics variables, arrays, objects, example code, tutorials'
+author: Venkata Bhattaram / tinitiate.com
+code-alias: jquery-variables
+slug: jquery/basics/variables
+---
+-->
+
+<!--
+# Arrays in jQuery
+* Arrays are list of values in a single variable, whose position is indexed
+  by a sequence of number starting from 0
+* Objects a key-value pair of data much like an array, the position of a value is
+  indexed by a key which must also be defined.
+* Examples for
+    * Declaring an array with jQuery
+    * Add elements to an array with jQuery
+    * Reading elements from an array with jQuery
+    * Modify / change elements in an array with jQuery
+    * Remove elements in an array with jQuery
+    * Find / search for elements in a array with jQuery
+    * Sort array elements with jQuery
+```
+-->
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    </head>
+    <body>
+        <script>
+            // Arrays in jQuery
+            // 1. Declaring and array
+            fruits_array = ['Apple', 'Mango', 'Orange'];
+            $(document.body).append(fruits_array);
+            $(document.body).append("<br>");
+
+
+            // Create an empty array variable
+            my_array = [];
+
+
+            // Adding elements or values to an array, this appends elements
+            my_array.push(22);
+            my_array.push(33);
+            my_array.push(44);
+            my_array.push(55);
+            my_array.push(66);
+
+            // Adding elements or values to an array, this prepends elements
+            my_array.unshift(222);
+            my_array.unshift(333);
+            my_array.unshift(444);
+            my_array.unshift(555);
+            my_array.unshift(666);
+
+            
+            // Display output
+            $(document.body).append(my_array);
+            $(document.body).append("<br>");
+
+
+            // Modifying element value in an array, using index value
+            // Before
+            // Index 1 is position 2
+            my_array[1] = 99
+            // After
+            $(document.body).append(my_array[1]);
+            $(document.body).append("<br>");
+
+
+            // Removing element by value in an array
+            my_array.splice(my_array.indexOf(33), 1);
+            
+            // Display output
+            $(document.body).append(my_array);
+            $(document.body).append("<br>");
+
+
+            // Removing element by index in an array
+            my_array.splice(2, 1);
+            
+            // Display output
+            $(document.body).append(my_array);
+            $(document.body).append("<br>");
+
+
+            // Removing first element in an array
+            my_array.shift();
+            
+            // Removing last element in an array
+            my_array.pop();
+            
+            // Display output
+            $(document.body).append(my_array);
+            $(document.body).append("<br>");
+
+
+            // Array get element by index
+            l_value_of_index_1 = my_array[1];
+
+            // Display output
+            $(document.body).append(l_value_of_index_1);
+            $(document.body).append("<br>");
+
+
+            // Count the values in an array
+            l_array_size = my_array.length;
+            
+            // Display output
+            $(document.body).append(l_array_size);
+            $(document.body).append("<br>");
+
+
+            // Array slicing, Gets elements between the start and end index 
+            // mentioned in the slice, excludes the end index
+            my_array.slice(1,3)
+
+            // Display output
+            $(document.body).append(my_array);
+            $(document.body).append("<br>");
+
+        </script>
+    </body>
+</html>
+<!--
+```
+-->

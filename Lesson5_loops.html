@@ -1,0 +1,88 @@
+<!-- 
+---
+title: jQuery Loops
+metadata:
+    description: 'jQuery Loops'
+    keywords: 'jQuery for loop, for in loop, while loop, do while loop, example code, tutorials'
+author: Venkata Bhattaram / tinitiate.com
+code-alias: jquery-loops
+slug: jquery/basics/loops
+---
+-->
+<!--
+# jQuery Loops
+* Loops are used to run code repeatedly for a specified or any number of times.
+* Javascript/jQuery supports 4 different loops
+    * FOR LOOP
+      The numer of times the loop must iterate is predefined based 
+      on value in the loop construct itself
+    * FOR IN LOOP
+      The numer of times the loop must iterate is predefined in the number of 
+      elements in the ARRAY or OBJECT.
+    * WHILE LOOP
+      The numer of times the loop must iterate MAY or MAY NOT be predefined,
+      The iteration count can be changed from within the loop, this loop is 
+      more flexible to use. First condition is checked and loop executed.
+    * DO WHILE LOOP
+      The numer of times the loop must iterate MAY or MAY NOT be predefined,
+      The iteration count can be changed from within the loop, this loop is 
+      more flexible to use. First loop is executed and condition is checked.
+```
+-->
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    </head>
+    <body>
+        <script>
+            
+            // FOR LOOP
+            // Print the variable my_site five times
+            my_site = 'www.tinitiate.com';
+           
+            for (var i=1; i<=5; i++) {
+                $(document.body).append("FOR LOOP Iteration " + i + " " + my_site + "<br>");
+            }
+
+
+            // FOR IN LOOP
+            // Print the variable my_site five times
+            my_array = ['JQUERY', 'JAVASCRIPT', 'HTML', 'CSS'];
+           
+            var j = 0
+            for (j in my_array) {
+                $(document.body).append('FOR IN LOOP i value: ' + my_array[i] + "<br>");
+            }
+            
+            
+            // WHILE LOOP
+            // Print the variable my_site five times
+            my_site = 'www.tinitiate.com';
+            
+            var k = 1;
+            while(k <= 5) {
+            
+                $(document.body).append("WHILE LOOP Iteration " + k + " " + my_site + "<br>");
+                // Incerment k and once it reaches 5 the loop stops
+                k++;
+            }
+            
+            
+            // DO WHILE LOOP
+            // Print the variable my_site five times
+            my_site = 'www.tinitiate.com';
+            
+            var p = 1;
+            do {
+                $(document.body).append("DO WHILE LOOP Iteration " + p + " " + my_site + "<br>");
+                // Incerment p and once it reaches 5 the loop stops
+                p++;
+            }
+            while(p <= 5)
+
+        </script>
+    </body>
+</html>
+<!--
+```
+-->

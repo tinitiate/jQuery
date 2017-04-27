@@ -1,0 +1,76 @@
+<!-- 
+---
+title: jQuery Objects
+metadata:
+    description: 'jQuery objects and properties'
+    keywords: 'jQuery objects and properties,values,keys,length,index delete object, example code, tutorials'
+author: Venkata Bhattaram / tinitiate.com
+code-alias: jquery-objects
+slug: jquery/basics/objects
+---
+-->
+<!--
+# Javascript Objects
+* Javascript objects are also called as properties
+* Javascript objects are Key-value pair of data
+* The data representation looks like {key1:value1, key2:value2,..}
+* Here we demonstrate the objects and some methods associated with the "Object" 
+  class of Javascript
+```
+-->
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js">
+        </script>
+    </head>
+    <body>
+        <script>
+        l_myobj = {'website':'tinitiate.com',
+                  'course':'javascript',
+                  'duration':'1 month',
+                  'fees':'USD$ 500'}
+        
+        // Print all values
+        $(document.body).append(Object.values(l_myobj));
+        $(document.body).append("<br>");
+
+        // Print all keys
+        $(document.body).append(Object.keys(l_myobj));
+        $(document.body).append("<br>");
+        
+        // Print value of key 'website' #SYNTAX: 1
+        $(document.body).append(l_myobj['website']);
+        $(document.body).append("<br>");
+
+        // Print value of key 'website' #SYNTAX: 2
+        $(document.body).append(l_myobj.website);
+        $(document.body).append("<br>");
+
+        // Change OBJECT VALUE of a KEY
+        l_myobj['website'] = "www.tinitiate.com";
+        $(document.body).append(l_myobj.website);
+        $(document.body).append("<br>");
+
+
+        // Change OBJECT VALUE of a KEY
+        l_myobj.website = "http://www.tinitiate.com";
+        $(document.body).append(l_myobj.website);
+        $(document.body).append("<br>");
+        
+        
+        // Delete a key:value in an object
+        delete l_myobj.website
+        $(document.body).append(Object.keys(l_myobj));
+        $(document.body).append("<br>");
+        
+
+        // Length or size of object
+        $(document.body).append(Object.keys(l_myobj).length);
+        $(document.body).append("<br>");
+        </script>
+    </body>
+</html>
+<!--
+```
+-->
+
