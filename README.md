@@ -1,4 +1,4 @@
 # jQuery
 jQuery 
-`by Venkata Bhattaram
+`by Venkata Bhattaram`
 (c) 2017
