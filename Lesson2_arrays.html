@@ -1,16 +1,15 @@
-<!--
+<!-- #
 ---
-title: jQuery Variables
-metadata:
-    description: 'jQuery basics variables, arrays and objects'
-    keywords: 'jQuery basics variables, arrays, objects, example code, tutorials'
-author: Venkata Bhattaram / tinitiate.com
-code-alias: jquery-variables
-slug: jquery/basics/variables
+YamlDesc: CONTENT-ARTICLE
+Title: jQuery Variables
+MetaDescription: 'jQuery arrays add modify remove jQueryarray elements'
+MetaKeywords: 'jQuery arrays add modify remove jQueryarray elements, example code, tutorials'
+Author: Venkata Bhattaram / tinitiate.com
+ContentName: jquery-arrays
 ---
--->
+# -->
 
-<!--
+<!-- #
 # Arrays in jQuery
 * Arrays are list of values in a single variable, whose position is indexed
   by a sequence of number starting from 0
@@ -25,7 +24,7 @@ slug: jquery/basics/variables
     * Find / search for elements in a array with jQuery
     * Sort array elements with jQuery
 ```
--->
+# -->
 <html>
     <head>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
@@ -57,7 +56,7 @@ slug: jquery/basics/variables
             my_array.unshift(555);
             my_array.unshift(666);
 
-            
+
             // Display output
             $(document.body).append(my_array);
             $(document.body).append("<br>");
@@ -74,7 +73,7 @@ slug: jquery/basics/variables
 
             // Removing element by value in an array
             my_array.splice(my_array.indexOf(33), 1);
-            
+
             // Display output
             $(document.body).append(my_array);
             $(document.body).append("<br>");
@@ -82,7 +81,7 @@ slug: jquery/basics/variables
 
             // Removing element by index in an array
             my_array.splice(2, 1);
-            
+
             // Display output
             $(document.body).append(my_array);
             $(document.body).append("<br>");
@@ -90,10 +89,10 @@ slug: jquery/basics/variables
 
             // Removing first element in an array
             my_array.shift();
-            
+
             // Removing last element in an array
             my_array.pop();
-            
+
             // Display output
             $(document.body).append(my_array);
             $(document.body).append("<br>");
@@ -109,13 +108,13 @@ slug: jquery/basics/variables
 
             // Count the values in an array
             l_array_size = my_array.length;
-            
+
             // Display output
             $(document.body).append(l_array_size);
             $(document.body).append("<br>");
 
 
-            // Array slicing, Gets elements between the start and end index 
+            // Array slicing, Gets elements between the start and end index
             // mentioned in the slice, excludes the end index
             my_array.slice(1,3)
 
@@ -126,6 +125,6 @@ slug: jquery/basics/variables
         </script>
     </body>
 </html>
-<!--
+<!-- #
 ```
--->
+# -->

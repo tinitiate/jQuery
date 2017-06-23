@@ -1,0 +1,82 @@
+<!-- #
+---
+YamlDesc: CONTENT-ARTICLE
+Title: jQuery DOM SELECTOR by Tag Name
+MetaDescription: 'jQuery DOM SELECTOR by Tag Name'
+MetaKeywords: 'jQuery DOM SELECTOR by Tag Name, example code, tutorials'
+Author: Venkata Bhattaram / tinitiate.com
+ContentName: jquery-dom-selector-by-name
+---
+
+# jQuery SELECTOR access DOM by name
+* By DOM NAME such as using "h1" tag <h1> My Title </h1>
+* changes to the DOM element through jQuery as a default or can be triggered by an event.
+* This code demonstrates the following
+  * Event less DOM SELECTION by Name
+  * Mouse Click Event to CREATE DOM SELECTION by Name
+  * Mouse Click Event to MODIFY DOM SELECTION by Name
+  * Mouse Click Event to REMOVE DOM SELECTION by Name
+```
+# -->
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    </head>
+    <body>
+        <script>
+
+        // Event Less DOM SELECTOR
+        // Here we use the Factory Function to change the background color of 
+        // the H1 tag.
+        $(document).ready(function() {
+            $("h1").css({"background-color":"yellow",
+                         "color" :"blue"
+                        });
+         });
+
+
+        // Event Onclick; Create a DOM element by Name
+        // Here we append the <p> tag with the text: "And I appear thanks to jQuery !!!"
+        $(document).ready(function() {
+            $("h2").click(function () {
+                $("h2").after("<h3>Hello Iam H3 tag</h3>");
+            });
+         });
+
+
+        // Event Onclick; Modify a DOM element by Name
+        // Here we replace the h4 tag with the new h4 tag
+        // Using the replaceWith() function, NOTICE THE CASE OF THE FUNCTION NAME
+        // "W" is CAPS in "replaceWith"
+        // the "this" keyword indicates the current element that is being worked with
+        // here it is the "h4" tag
+        $(document).ready(function() {
+            $("h4").click(function () {
+                $(this).replaceWith("Iam the new H4 Tag");
+            });
+         });
+
+         
+        // Event Onclick; Remove a DOM element by Name
+        // Here we remove the h5 tag using the remove() function,
+        // the "this" keyword indicates the current element that is being worked with
+        // here it is the "h5" tag
+        $(document).ready(function() {
+            $("h5").click(function () {
+                $(this).remove();
+            });
+         });
+
+        </script>
+        <h1>TINITIATE.COM</h1>
+
+        <h2 style="color:red;">This is H2 Tag, Click Me to CREATE a new "h3" tag</h2>
+
+        <h4>Iam the H4 Tag, Click Me to Change</h4>
+
+        <h5>Iam the H5 Tag, Click me to remove this</h5>
+    </body>
+</html>
+<!-- #
+```
+# -->

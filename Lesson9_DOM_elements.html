@@ -1,0 +1,60 @@
+<!-- #
+---
+YamlDesc: CONTENT-ARTICLE
+Title: jQuery DOM SELECTOR
+MetaDescription: 'jQuery DOM SELECTOR'
+MetaKeywords: 'jQuery DOM SELECTOR, example code, tutorials'
+Author: Venkata Bhattaram / tinitiate.com
+ContentName: jquery-dom-selector
+---
+
+# jQuery DOM SELECTOR
+* DOM or DOCUMENT OBJECT MODEL, is the hierarchy of TAGS ( such as <BODY>, <TITLE>,
+  <DIV>,<p> ..) in the HTML document.
+* They are the most basic elements of the HTML document, which have all the content.
+* All DOM elements, their attributes can be accessed by NAME, ID or ATTRIBUTE Name
+  using jQuery selectors.
+* Changes or removal of these DOM elements can be done using the SELECTORS.
+* Below is demonstration of using selectors using an event, such as a mouse click, 
+  double click, mouse cursor hover and so on.
+* The selector is done using the FACTORY FUNCTION "$()"
+* DOM manipulation could be any of the following:
+    * Append new content to existing content to DOM elements.
+    * Replace existing content to with new content to/from DOM elements.
+    * Remove content from DOM elements.
+* DOM identification for selection can be done by the following
+    * By DOM NAME such as using "h1" tag in:  <h1> My Title </h1>
+    * By DOM ID such as using "about_us" in: <p id="about_us"> We are developers</p>
+    * By DOM TAG CLASS such as "info" in: <p class="info" id="p1"> We are developers</p>
+```
+# -->
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    </head>
+    <body>
+        <script>
+
+        // Onclick do some action,
+        // Here we change the Heading from "This is TINITIATE" to "This is TINITIATE jQuery Tutorials"
+        $(document).ready(function() {
+            $("h1").click(function () {
+                $("h1").replaceWith("<h1 style=\"color:red;\">This is TINITIATE</h1>");
+            });
+         });
+
+        $(document).ready(function() {
+            $("h2").click(function () {
+                $("p").append("And I appear thanks to jQuery !!!");
+            });
+         });
+
+        </script>
+        <h1>Click Me!</h1>
+        <h2>Click Me too!</h2>
+        <p style="background-color:yellow; color:red;"></p>
+    </body>
+</html>
+<!-- #
+```
+# -->

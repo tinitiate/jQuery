@@ -1,0 +1,84 @@
+<!-- #
+---
+YamlDesc: CONTENT-ARTICLE
+Title: jQuery Object Functions
+MetaDescription: 'jQuery Javascript Object Functions'
+MetaKeywords: 'jQuery Javascript Object Functions, Object functions, function parameters, function return values, example code, tutorials'
+Author: Venkata Bhattaram / tinitiate.com
+ContentName: jquery-object-functions
+---
+
+# jQuery Object Functions
+* A Object Function are functions inside an object.
+* They could be functions with or without parameters
+
+```
+# -->
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    </head>
+    <body>
+        <script>
+
+            // Create a function inside an Object (variable) as member function
+            // ======
+            var myObject = {
+                website:"Tinitiate.com",
+                course: "Javascript",
+                CourseDetails: function () {
+                    return this.website + " " + this.course;
+                }
+            }
+
+            // Call the function in the Object
+            $(document.body).append(myObject.CourseDetails() + "<br>");
+
+
+            // Create a Function Constructor with a variable
+            // ======
+            var Add2Nums = new Function("Num1", "Num2", "return Num1+Num2")
+
+            // Call the function in the Object
+            $(document.body).append(Add2Nums(1,2) + "<br>");
+
+
+            // Nested function
+            function calc(num1, c_operator, num2) {
+
+                var l_data;
+
+                function adder() { return num1+num2; }
+                function multiplier() { return num1*num2; }
+                function diff() { return num1-num2; }
+                function divder() { return num1/num2; }
+
+                // Call the above functions as per the operator supplied
+                if (c_operator == '+') {
+                    l_data = adder();
+                }
+                else if (c_operator == '*') {
+                    l_data = multiplier();
+                }
+                else if (c_operator === '-') {
+                    l_data = diff();
+                }
+                else if (c_operator == '/') {
+                    l_data = divder();
+                }
+
+                return l_data;
+            }
+
+            // Call the function and print results in the web page body
+            $(document.body).append(calc(100,'+',20) + "<br>");
+            $(document.body).append(calc(100,'-',20) + "<br>");
+            $(document.body).append(calc(100,'*',20) + "<br>");
+            $(document.body).append(calc(100,'/',20) + "<br>");
+
+        </script>
+    </body>
+</html>
+<!-- #
+```
+# -->

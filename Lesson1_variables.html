@@ -1,68 +1,67 @@
-<!-- 
+<!-- #
 ---
-title: jQuery Variables
-metadata:
-    description: 'jQuery basics variables, arrays and objects'
-    keywords: 'jQuery basics variables, arrays, objects, example code, tutorials'
-author: Venkata Bhattaram / tinitiate.com
-code-alias: jquery-variables
-slug: jquery/basics/variables
+YamlDesc: CONTENT-ARTICLE
+Title: jQuery Variables
+MetaDescription: 'jQuery basics variables and data types'
+MetaKeywords: 'jQuery basics variables and data types, example code, tutorials'
+Author: Venkata Bhattaram / tinitiate.com
+ContentName: jquery-variables
 ---
--->
+# -->
 
-<!-- 
+<!-- #
 # Introduction to jQuery
 * jQuery is a JavaScript Library which greatly simplifies JavaScript programming.
 * Its a lightweight library with a motto writeless and do more.
 * It simplifies various complicated javascript functionality.
--->
+# -->
 
-<!-- 
-## Variables and print to HTML body using jQuery 
+<!-- #
+## Variables and print to HTML body using jQuery
 * jQuery code must be written between the "<script> jQuery Code here </script>" tags
 * Creating variables in jQuery
 * Strings, Numbers
 ```
--->
+# -->
 <html>
     <head>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
-    </head>    
+    </head>
     <body>
         <script>
-            
+
             // STRING VARIABLES in jQuery
             // ==========================
             // String in Single Quotes
             var str1 = 'TINITIATE.COM';
-            
+
             // Print this by appending the values to the HTML body
             $(document.body).append(str1);
-            
+
             // String in Double Quotes
             var str2 = 'TINITIATE.COM';
-            
+
             // Print this to the HTML in a "<p>" tag
             $(document.body).append(str1);
-            
-            
+
+
             // Create a newline
             $(document.body).append("<br>");
-            
+
             // NUMBER VARIABLES in jQuery
             // ==========================
             var num1 = 100;     // Integer Number
             var num2 = 100.99;  // Decimal Number
 
-            // Print this by appending the values to the HTML body            
+            // Print this by appending the values to the HTML body
             $(document.body).append(num1);
             $(document.body).append("<br>"); // Creates a newline
             $(document.body).append(num2);
 
         </script>
-    
+
     </body>
 </html>
-<!--
+<!-- #
 ```
--->
+# -->

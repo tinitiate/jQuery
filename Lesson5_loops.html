@@ -1,15 +1,14 @@
-<!-- 
+<!-- #
 ---
-title: jQuery Loops
-metadata:
-    description: 'jQuery Loops'
-    keywords: 'jQuery for loop, for in loop, while loop, do while loop, example code, tutorials'
-author: Venkata Bhattaram / tinitiate.com
-code-alias: jquery-loops
-slug: jquery/basics/loops
+YamlDesc: CONTENT-ARTICLE
+Title: jQuery Loops
+MetaDescription: 'jQuery Loops'
+MetaKeywords: 'jQuery for loop, for in loop, while loop, do while loop, example code, tutorials'
+Author: Venkata Bhattaram / tinitiate.com
+ContentName: jquery-loops
 ---
--->
-<!--
+# -->
+<!-- #
 # jQuery Loops
 * Loops are used to run code repeatedly for a specified or any number of times.
 * Javascript/jQuery supports 4 different loops
@@ -27,15 +26,20 @@ slug: jquery/basics/loops
       The numer of times the loop must iterate MAY or MAY NOT be predefined,
       The iteration count can be changed from within the loop, this loop is 
       more flexible to use. First loop is executed and condition is checked.
+
+
+## jQuery FOR LOOP
+* The numer of times the loop must iterate is predefined based 
+  on value in the loop construct itself.
 ```
--->
+# -->
 <html>
     <head>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
     </head>
     <body>
         <script>
-            
+
             // FOR LOOP
             // Print the variable my_site five times
             my_site = 'www.tinitiate.com';
@@ -43,8 +47,23 @@ slug: jquery/basics/loops
             for (var i=1; i<=5; i++) {
                 $(document.body).append("FOR LOOP Iteration " + i + " " + my_site + "<br>");
             }
+        </script>
+    </body>
+</html>
+<!-- #
+```
 
-
+## FOR IN LOOP
+* The numer of times the loop must iterate is predefined in the number of 
+  elements in the ARRAY or OBJECT.
+```
+# -->
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    </head>
+    <body>
+        <script>
             // FOR IN LOOP
             // Print the variable my_site five times
             my_array = ['JQUERY', 'JAVASCRIPT', 'HTML', 'CSS'];
@@ -53,8 +72,26 @@ slug: jquery/basics/loops
             for (j in my_array) {
                 $(document.body).append('FOR IN LOOP i value: ' + my_array[i] + "<br>");
             }
-            
-            
+
+        </script>
+    </body>
+</html>
+<!-- #
+```
+
+## jQuery WHILE LOOP
+* The number of times the loop must iterate MAY or MAY NOT be predefined, The 
+  iteration count can be changed from within the loop, this loop is more flexible 
+  to use. First condition is checked and loop executed.
+```
+# -->
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    </head>
+    <body>
+        <script>
+                        
             // WHILE LOOP
             // Print the variable my_site five times
             my_site = 'www.tinitiate.com';
@@ -66,8 +103,26 @@ slug: jquery/basics/loops
                 // Incerment k and once it reaches 5 the loop stops
                 k++;
             }
-            
-            
+        </script>
+    </body>
+</html>
+
+<!-- #
+```
+
+## jQuery DO WHILE LOOP
+* The numer of times the loop must iterate MAY or MAY NOT be predefined, The 
+  iteration count can be changed from within the loop, this loop is more flexible 
+  to use. First loop is executed and condition is checked.
+```
+# -->
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    </head>
+    <body>
+        <script>
+
             // DO WHILE LOOP
             // Print the variable my_site five times
             my_site = 'www.tinitiate.com';
@@ -83,6 +138,6 @@ slug: jquery/basics/loops
         </script>
     </body>
 </html>
-<!--
+<!-- #
 ```
--->
+# -->

@@ -1,0 +1,47 @@
+<!-- #
+---
+YamlDesc: CONTENT-ARTICLE
+Title: jQuery Functions
+MetaDescription: 'jQuery Javascript Functions'
+MetaKeywords: 'jQuery Javascript Functions, Object functions, function parameters, function return values, example code, tutorials'
+Author: Venkata Bhattaram / tinitiate.com
+ContentName: jquery-functions
+---
+
+# jQuery Functions
+* A Function is a block of code with a name.
+* Functions may or may not accept inputs, to the code within
+* A Return value of a function is which gives out a value from the function
+* Functions can also be part of an Object
+```
+# -->
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    </head>
+    <body>
+        <script>
+            
+            // This function simply prints 'TINITIATE.COM' to the webpage
+            function printTinitiate() {
+                $(document.body).append("TINITIATE.COM" + "<br>");
+            }
+
+            // This function accepts to parameters and returns a value
+            function add2Nums(p_num1, p_num2) {
+                
+                return(p_num1 + p_num2);
+            }
+
+            // Call the Function, printTinitiate
+            printTinitiate();
+
+            // Call the add2Nums inside the append as the function returns a value.
+            $(document.body).append(add2Nums(100, 200) + "<br>");
+
+        </script>
+    </body>
+</html>
+<!-- #
+```
+# -->

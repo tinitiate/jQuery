@@ -1,0 +1,166 @@
+<!-- #
+---
+YamlDesc: CONTENT-ARTICLE
+Title: jQuery Loops Control
+MetaDescription: 'jQuery Loop Control'
+MetaKeywords: 'jQuery loop control break, continue, label, example code, tutorials'
+Author: Venkata Bhattaram / tinitiate.com
+ContentName: jquery-loop-control
+---
+# -->
+<!-- #
+# jQuery Loop Control
+* Loops are used to run code repeatedly for a specified or any number of times.
+* Loop control statements are used to control the number of iterations in the loop.
+* Unlike the loop count variables in the FOR or the WHILE, the Loop control 
+  statements can override when the loop can exit or continue as needed.
+* The control statements are USUALLY used in an CONDITIONAL STATEMENT,
+
+* **BREAK**
+  The "break" keyword is used to abruptly exit the LOOP,
+  This must be used in scenarios where no further processing or iterations are 
+  required when some ciritical logic check fail.
+
+* **CONTINUE**
+  The "break" keyword is used to abruptly exit the current ITERATION,
+  and move to the next ITERATION, The LOOP still executes.
+
+* **LABEL**
+  This is a IDENTIFIER for a code block, usually LOOPS and use a LABEL inconjenction 
+  with a BREAK or CONTINUE.
+  They are used in NESTED LOOPS to control either the INNER or OUTER LOOP
+
+  
+## BREAK
+* The "break" keyword is used to abruptly exit the LOOP, This must be used in 
+  scenarios where no further processing or iterations are required 
+  when some critical logic check fail.
+```
+# -->
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    </head>
+    <body>
+        <script>
+
+            // BREAK with FOR LOOP
+            // LOOP prints 'www.tinitiate.com' five times
+            // BREAK STOPS it after 2 iterations
+           
+            for (var i=1; i<=5; i++) {
+                
+                // Exit the LOOP when i > 2
+                if(i > 2) {
+                    break;
+                }
+
+                $(document.body).append("FOR LOOP www.tinitiate.com"+ "<br>");
+            }
+
+
+            // BREAK with WHILE LOOP
+            // LOOP prints 'www.tinitiate.com' five times
+            // BREAK STOPS it after 2 iterations
+           
+            var k = 1;
+            while(k <= 5) {
+
+                // Exit the LOOP when i > 2
+                if(k > 2) {
+                    break;
+                }
+
+                $(document.body).append("WHILE LOOP www.tinitiate.com"+ "<br>");
+                k++;
+            }
+        </script>
+    </body>
+</html>
+<!-- #
+```
+
+## CONTINUE
+* The "break" keyword is used to abruptly exit the current ITERATION, and move to 
+  the next ITERATION, The LOOP still executes.
+```
+# -->
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    </head>
+    <body>
+        <script>
+            
+            // CONTINUE with FOR LOOP
+            // LOOP prints 'www.tinitiate.com' five times
+            // CONTINUE SKIPS printing the "STEP.3" for "ITERATION# 2"
+            for (var l=1; l<=3; l++) {
+                
+                $(document.body).append("ITERATION#"+ l +" STEP.1 "+ "<br>"); // STEP.1
+                $(document.body).append("ITERATION#"+ l +" STEP.2 "+ "<br>"); // STEP.2
+                // Exit the ONLY THE ITERATION NOT THE LOOP when l == 2
+                if(l == 2) {,
+                    continue;
+                }
+                $(document.body).append("ITERATION#"+ l +" STEP.3 "+ "<br>"); // STEP.3
+            }
+        </script>
+    </body>
+</html>
+<!-- #
+```
+
+## LABEL
+* This is a IDENTIFIER for a code block, usually LOOPS and use a LABEL inconjenction 
+  with a BREAK or CONTINUE.
+* They are used in NESTED LOOPS to control either the INNER or OUTER LOOP.
+```
+# -->
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    </head>
+    <body>
+        <script>
+        
+            // LABEL with FOR LOOP
+            // WITH BREAK
+            l_characters = ['A','B','C']
+
+            outerloop:
+            for (var m=1; m<=3; m++) {
+
+                innerloop:
+                for (var n in l_characters) {
+                    // BREAK the innerloop in the SECOND ITERATION of the OUTER LOOP
+                    if(m == 2) {
+                        break innerloop;
+                    }
+                    $(document.body).append("OUTER-LOOP-DATA: " +  m + " INNER-LOOP-DATA: " + n + "<br>");
+                }
+            }
+
+            // LABEL with FOR LOOP
+            // WITH CONTINUE
+            l_charactersR = ['X','Y','Z']
+
+            outerloop:
+            for (var o=1; o<=3; o++) {
+
+                if(o == 2) {
+                    continue outerloop;
+                }
+
+                innerloop:
+                for (var p in l_charactersR) {
+                    // BREAK the innerloop in the SECOND ITERATION of the OUTER LOOP
+                    $(document.body).append("OUTER-LOOP-DATA: " +  o + " INNER-LOOP-DATA: " + p + "<br>");
+                }
+            }
+        </script>
+    </body>
+</html>
+<!-- #
+```
+# -->
