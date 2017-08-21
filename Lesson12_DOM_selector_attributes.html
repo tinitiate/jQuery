@@ -1,0 +1,88 @@
+<!-- #
+---
+YamlDesc: CONTENT-ARTICLE
+Title: jQuery DOM SELECTOR by Attribute
+MetaDescription: jQuery DOM SELECTOR by Attribute and Attribute Value
+MetaKeywords: jQuery DOM SELECTOR by Attribute and Attribute Value example code, tutorials
+Author: Venkata Bhattaram / tinitiate.com
+ContentName: jquery-dom-selector-attributes
+---
+
+# jQuery SELECTOR access DOM by attribute
+* DOM selection can be done on attribute and attribute values
+* HTML attributes and attribute values are included in the %lt;TAG ATTRIBUTE="ATTRIBUTE-VALUE"&gt;
+* While reading the attribute values make sure to include the attribute names as well.
+
+```
+# -->
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    </head>
+    <body>
+        <!--
+        Consider the following HTML
+        1. There are FOUR DIVs
+            1.1 The ATTRIBUTES are topic and style for div d1
+            1.2 The ATTRIBUTES is style for div d2
+            1.3 The ATTRIBUTES is style for div d3
+            1.4 The ATTRIBUTES is style for div d4
+        2. The first part of the program is, to read the value of the TAG 
+           whose ATTRIBUTE is "topic".
+        3. The second part of the program is to read the value of all the tags whose
+           ATTRIBUTE VALUES is "background-color:red;".
+        -->
+        <div id="d1">
+            <p  topic="outer" style="background-color:lightred;"> Iam tinitiate-outer </p>
+        </div>
+        <div id="d2">
+            <p style="background-color:yellow;"> Iam d2</p>
+        </div>
+        <div id="d3">
+            <p style="background-color:red;"> Iam d3 and RED BACKGROUND</p>
+        </div>
+        <div id="d4">
+            <p style="background-color:red;"> Iam d4 and RED BACKGROUND</p>
+        </div>
+
+        <!--
+        OUTPUT of the selection is printed in this section.
+        -->
+        <hr>
+        <p id="output1"> <span style="background-color:lightblue;">Click Here ! </span><p>
+        <p id="op1"> Display ATTRIBUTE tintiate-outer content </p>
+        <hr>
+        <p id="output2"> Click Here ! <p>
+        <p id="op2"> Display all ATTRIBUTE VALUES "background-color:red" content </p>
+        <hr>
+
+        <script>
+
+            // READ ATTRIBUTE
+            // Read the value of the TAG whose ATTRIBUTE is "topic".
+            $(document).ready(function() {
+                $("#output1").click(function () {
+                    // Get the text() of the ATTRIBUTE topic
+                    $("#op1").replaceWith($("[topic]").text());
+                });
+             });
+
+            // READ ATTRIBUTE VALUE
+            // Read the value of all the tags whose ATTRIBUTE VALUES 
+            // is "background-color:red;".
+            $(document).ready(function() {
+                var attrs = $('[style="background-color:red;"]').text();
+                
+                $("#output2").click(function () {
+                    // Get the text() of the ATTRIBUTE topic
+                    $("#op2").replaceWith(attrs);
+                });
+             });
+
+        </script>
+
+    </body>
+</html>
+<!-- #
+```
+# -->

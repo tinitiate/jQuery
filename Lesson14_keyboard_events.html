@@ -1,0 +1,58 @@
+<!-- #
+---
+YamlDesc: CONTENT-ARTICLE
+Title: jQuery Keyboard Events
+MetaDescription: 'jQuery Keyboard Events'
+MetaKeywords: 'jQuery keyboard events, example code, tutorials'
+Author: Venkata Bhattaram / tinitiate.com
+ContentName: jquery-keyboard-events
+---
+
+# jQuery Keyboard Events
+* A keyboard event is fired when the user press or release a key on the keyboard.
+    * keypress, When the Key is pressed.
+    * keydown, When the Key is pressed down, This usually shows only 
+      UPPERCASE of the key pressed.
+    * keyup, When Key is released.
+```
+# -->
+<html lang="en">
+  <head>
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <p id="KeyPressEvents" style="background-color:yellow; color:red; align:center"> &nbsp; <br> Press any key on keyboard <br> &nbsp; </p>
+    <p id="Output"> </p>
+    <p id="kPress"> </p>
+  </body>
+  <script>
+
+    // KEYPRESS
+    // When the key is pressed
+    // Print the Character pressed on the KeyBoard
+    $(document).keypress(function(e) {
+        $("#Output").empty().append("Key " + String.fromCharCode(e.which) + " pressed!").css({"color":"green"});
+    });
+
+
+    // KEYDOWN
+    // When the key is held down
+    // Show key character that is pressed down
+    $(document).keydown (function(e) {
+        $("#kPress").empty().append("<b>" + String.fromCharCode(e.which) + "</b>").css({"color":"red"});
+    });
+
+
+    // KEYUP
+    // When the a key that was held down is released
+    // Clear the content of the ID "#kPress"
+    $(document).keyup(function(e) {
+        $("#kPress").empty();
+    });
+
+  </script>
+</html>
+<!-- #
+```
+# -->

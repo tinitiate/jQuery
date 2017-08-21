@@ -1,0 +1,83 @@
+<!-- #
+---
+YamlDesc: CONTENT-ARTICLE
+Title: jQuery DOM SELECTOR by Tag ID
+MetaDescription: 'jQuery DOM SELECTOR by Tag ID'
+MetaKeywords: 'jQuery DOM SELECTOR by Tag ID, example code, tutorials'
+Author: Venkata Bhattaram / tinitiate.com
+ContentName: jquery-dom-selector-by-id
+---
+# jQuery SELECTOR access DOM by id
+* **All HTML tag IDs must be prefix with a HASH "#" synbol**
+* By DOM NAME such as using "#id" of a tag <p id="tinitiate"> tinitiate is cool !</p>
+* changes to the DOM element through jQuery as a default or can be triggered by an event.
+* This code demonstrates the following
+  * Event less DOM SELECTION by Name
+  * Mouse Click Event to CREATE DOM SELECTION by ID
+  * Mouse Click Event to MODIFY DOM SELECTION by ID
+  * Mouse Click Event to REMOVE DOM SELECTION by ID
+
+```
+# -->
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    </head>
+    <body>
+        <script>
+
+        // Event Less DOM SELECTOR
+        // Here we use the Factory Function (a function that returns a value) to change 
+        // the background color of the "p" tag with ID "tinitiate".
+        $(document).ready(function() {
+            $("#tinitiate").css({"background-color":"yellow",
+                         "color" :"blue"
+                        });
+         });
+
+
+        // Event Onclick; Create a DOM element by Name
+        // Here we append a new <p> tag with the text: "Hello Iam the new P tag"
+        $(document).ready(function() {
+            $("#addcontent").click(function () {
+                $("#addcontent").after("<p>Hello Iam the new P tag</p>");
+            });
+         });
+
+
+        // Event Onclick; Modify a DOM element by Name
+        // Here we replace the "p" tag with the new "p" tag
+        // Using the replaceWith() function, NOTICE THE CASE OF THE FUNCTION NAME
+        // "W" is CAPS in "replaceWith"
+        // the "this" keyword indicates the current element that is being worked with
+        // here it is the "p" tag with ID "textchange"
+        $(document).ready(function() {
+            $("#textchange").click(function () {
+                $(this).replaceWith("Iam the changed P Tag");
+            });
+         });
+
+         
+        // Event Onclick; Remove a DOM element by Name
+        // Here we remove the p tag using the remove() function,
+        // the "this" keyword indicates the current element that is being worked with
+        // here it is the "p" tag with ID "removeme"
+        $(document).ready(function() {
+            $("#removeme").click(function () {
+                $(this).remove();
+            });
+         });
+
+        </script>
+        <p id="tinitiate">TINITIATE.COM</p>
+
+        <p id="addcontent" style="color:red;">This is "p" TAG with ID "addcontent", Click Me to CREATE a new "p" tag</p>
+
+        <p id="textchange">This is "p" TAG with ID "textchange", Click Me to Change</p>
+
+        <p id="removeme">This is "p" TAG with ID "removeme", Click me to remove this</p>
+    </body>
+</html>
+<!-- #
+```
+# -->

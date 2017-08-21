@@ -1,0 +1,86 @@
+<!-- #
+---
+YamlDesc: CONTENT-ARTICLE
+Title: jQuery Mouse Events
+MetaDescription: 'jQuery Mouse Events'
+MetaKeywords: 'jQuery mouse events, example code, tutorials'
+Author: Venkata Bhattaram / tinitiate.com
+ContentName: jquery-mouse-events
+---
+
+# jQuery Mouse Events
+* Events are actions that happen on the webpage, they can be automatic such as
+  page load or user driven such as mouse click, keyboard button press.
+* These events can be used to trigger an action such as execute a JQuery
+  Function or perform a DOM change.
+* In this program we demonstrate Mouse Events for: 
+    * click - Single Click, When single clicked on a DOM of HTML
+    * Doubleclick - dblclick, When double clicked on a DOM of HTML
+    * hover, Event when the mouse is over a DOM of HTML
+    * mouseenter, Event When mouse hovers on a DOM of HTML
+    * mouseleave, Event When mouse exits on a DOM of HTML
+    * mousemove, Event When mouse moves anywhere in or DOM HTML
+```
+# -->
+<html lang="en">
+  <head>
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <p id="ClickEvents" style="background-color:yellow; color:red; align:center"> &nbsp; <br> Click in this box <br> &nbsp; </p>
+    <p id="DblClickEvents" style="background-color:lightgreen; color:blue; align:center"> &nbsp; <br> Double Click in this box <br> &nbsp; </p>
+    <p id="MouseMoveEvents" style="background-color:lightblue; color:black; align:center"> &nbsp; <br> Move Move Here <br> &nbsp; </p>
+    <p id="MouseHover" style="background-color:lightyellow; color:black; align:center"> &nbsp; <br> Hover mouse here <br> &nbsp; </p>
+    <p id="MouseMove" style="background-color:lightgrey; color:black; align:center"></p>
+    <p id="Output"> </p>
+  </body>
+  <script>
+
+    // CLICK
+    // Mouse on Click
+    $("#ClickEvents").click(function() {
+        // $("#Output").replaceWith("! Single click !").css({"color":"red"})
+        // Use empty().append()
+        $("#Output").empty().append("! Single click !").css({"color":"red"})
+    });
+
+    // DBLCLICK
+    // Mouse on Double Click
+    $("#DblClickEvents").dblclick(function() {
+        $("#Output").empty().append("! Double click !").css({"color":"green"});
+    });
+
+    
+    // MOUSEENTER
+    // Mouse Enter events
+    $("#MouseMoveEvents").mouseenter(function() {
+        $("#Output").empty().append("<b>! Mouse Enter !</b>").css({"color":"blue"});
+    });
+
+    
+    // MOUSELEAVE
+    // Mouse Leave events
+    $("#MouseMoveEvents").mouseleave(function() {
+        $("#Output").empty().append("<b>! Mouse Leave !</b>").css({"color":"orange"});
+    });
+
+
+    // HOVER
+    // Mouse Hover events
+    $("#MouseHover").hover(function() {
+        $("#Output").empty().append("<b>! Mouse Hover !</b>").css({"background-color":"yellow"});
+    });
+    
+    
+    // MOUSEMOVE
+    // Mouse move events
+    $(document).mousemove(function(event) {
+        $("#MouseMove").empty().append("Mouse Cursor Position " + event.pageX + " , " + event.pageY);
+    });
+    
+  </script>
+</html>
+<!-- #
+```
+# -->
