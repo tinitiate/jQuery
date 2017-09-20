@@ -1,0 +1,19 @@
+---
+YamlDesc: FOLDER-YAML
+Slug: jquery
+GenerateTemplateFlag: false
+GenerateFolderNavURLNamesJS: false
+ProcessFilePathList:
+    - Lesson1_variables.html
+    - Lesson2_arrays.html
+    - Lesson3_objects.html
+    - Lesson4_conditional_statements.html
+    - Lesson5_loops.html
+    - Lesson6_loop_control.html
+    - Lesson7_functions.html
+    - Lesson8_object_functions.html
+    - Lesson9_DOM_elements.html
+    - Lesson10_DOM_selector_by_name.html
+    - Lesson11_DOM_selector_by_id.html
+    - Lesson12_DOM_selector_attributes.html
+---

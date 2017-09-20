@@ -1,0 +1,52 @@
+<!-- #
+---
+YamlDesc: CONTENT-ARTICLE
+Title: jQuery AJAX Load Function
+MetaDescription: jQuery AJAX Load Function
+MetaKeywords: jQuery AJAX Load Function, example code, tutorials
+Author: Venkata Bhattaram / tinitiate.com
+ContentName: jquery-ajax-load
+---
+
+# jQuery Ajax
+* Ajax stands for **Asynchronous JavaScript and XML**
+* The main purpose of AJAX is to update the part of a web page using by making server
+  calls without reloading entire webpage.
+* How it works: 
+  * send asynchronous, http request to the server, using the methods
+    * **load()**
+    * This method loads data from server and returns this data to the jQuery block 
+      calling this load() function.
+```
+# -->
+<html>
+   <head>
+      <title>jQuery AJAX load()</title>
+      
+      <script type = "text/javascript"
+      src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+      
+      <script type = "text/javascript" language = "javascript">
+         // DEMO: Get Exernal HTML Data
+         // Getting AJAX jQuery LOAD() method to read data from an external HTML File
+         $(document).ready(function() {
+            $("#LoadDemoHTML").click(function(event) {
+               $('#outputHTML').load('./ajaxHTMLData.html');
+            });
+         });
+      </script>
+   </head>
+   <body>
+
+      <!--  ## DEMO Get Exernal HTML Data ##
+       Getting AJAX jQuery LOAD() method to read data from an external HTML File
+      --> 
+      <p>Clicking the button gets HTML from ajaxHTMLData.html file.</p>
+      <p id = "outputHTML"> </p>
+      <input type = "button" id = "LoadDemoHTML" value = "AJAX Load() HTML"/>
+
+   </body>
+</html>
+<!-- #
+```
+# -->

@@ -1,0 +1,135 @@
+<!-- #
+---
+YamlDesc: CONTENT-ARTICLE
+Title: jQuery AJAX Get
+MetaDescription: jQuery AJAX Get
+MetaKeywords: jQuery AJAX Get, getJSON(), example code, tutorials
+Author: Venkata Bhattaram / tinitiate.com
+ContentName: jquery-ajax-get
+---
+
+# jQuery Ajax Get Function
+* Ajax stands for **Asynchronous JavaScript and XML**
+* The main purpose of AJAX is to update the part of a web page using by making server
+  calls without reloading entire webpage.
+* **get()**
+* The jQuery get() method sends asynchronous http GET request to the server, and
+  gets the data.
+* **PARAMETERS of get() method**
+* $.get( url, [data], [callback], [type] )
+* url - Path of the file that needs to read.
+* data - key/value pairs data that needs to be sent to the server.
+* callback or success - Optional parameter representing a function that will be
+  executed if the data from server is successfully retrieved.
+* type - Optional Parameter indicating type of retrieved data by callback function
+  html,json,xml,text.
+* Get JSON data using the getJSON() function.
+```
+# -->
+<html>
+   <head>
+      <title>jQuery AJAX get()</title>
+      <script type = "text/javascript"
+      src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+      <!-- AJAX get()
+           jQuery to read data from HTML (or) TXT using AJAX get() -->
+      <script type = "text/javascript" language = "javascript">
+         $(document).ready(function () {
+             $('#LoadDemoHTML').click(function(){
+                $.get('ajaxHTMLData.html', function (data, textStatus, jqXHR) {
+                    $('#outputHTML').append(data);
+                });
+            });
+         });
+      </script>
+
+
+      <!-- AJAX getJSON(), Read JSON data using AJAX
+           jQuery to read JSON data into html table using AJAX getJSON() -->
+      <script type = "text/javascript" language = "javascript">
+         $(document).ready(function () {
+             $('#LoadDemoJS').click(function() {
+                $.getJSON('ajaxJSONData.js', function (data) {
+
+                    var l_table_html = "<table>";
+                    var course_data_rec = data.course_data;
+
+                    for (var i = 0, len = course_data_rec.length; i < len; i++) {
+
+                        l_table_html = l_table_html + "<tr><td>";
+                        // Create table
+                        l_table_html = l_table_html + course_data_rec[i].course_id
+                                                    + "</td><td>"
+                                                    + course_data_rec[i].course_name
+                                                    + "</td></tr>";
+                    }
+                    l_table_html = l_table_html + "</table>";
+                    $('#outputJS').append(l_table_html);
+                });
+            });
+         });
+      </script>
+
+
+      <!-- AJAX get() XML
+           jQuery to read XML data into html table using AJAX get() -->
+      <script type = "text/javascript" language = "javascript">
+         $(document).ready(function () {
+             $('#LoadDemoXML').click(function() {
+                $.get('ajaxXMLData.xml', function (xml) {
+
+                    var l_table_html = "<table>";
+
+                    // Loop through the XML element of "info"
+                    $(xml).find('info').each(function() {
+
+                      var lCourse_ID = $(this).find('course_id').text();
+                      var lCourse_Name = $(this).find('course_name').text();
+                      l_table_html = l_table_html + "<tr><td>";
+                      
+                      // Create table
+                      l_table_html = l_table_html + lCourse_ID
+                                                  + "</td><td>"
+                                                  + lCourse_Name
+                                                  + "</td></tr>";
+
+                    });
+
+                l_table_html = l_table_html + "</table>";
+                $('#outputXML').append(l_table_html);
+                });
+             });
+         });
+      </script>
+
+   </head>
+   <body>
+      <!--  ## DEMO ##
+       Getting AJAX jQuery get() method to read data from an external HTML File
+      -->
+      <p>Clicking the button gets data from ajaxHTMLData.html file.</p>
+      <p id = "outputHTML"> </p>
+      <input type = "button" id = "LoadDemoHTML" value = "AJAX get() HTML"/>
+
+
+      <!--  ## DEMO ##
+       Getting AJAX jQuery get() method to read data from an external JS File
+      -->
+      <p>Clicking the button gets data from ajaxJSONData.js file.</p>
+      <p id = "outputJS"> </p>
+      <input type = "button" id = "LoadDemoJS" value = "AJAX get() JS"/>
+
+
+      <!--  ## DEMO ##
+       Getting AJAX jQuery LOAD() method to read data from an external XML File
+      -->
+      <p>Clicking the button gets data from ajaxXMLData.xml file.</p>
+      <p id = "outputXML"> </p>
+      <input type = "button" id = "LoadDemoXML" value = "AJAX get() XML"/>
+
+   </body>
+</html>
+<!-- #
+```
+# -->

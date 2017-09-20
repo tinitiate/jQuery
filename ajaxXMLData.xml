@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<course_data>
+  <info>
+     <course_id>1</course_id>
+     <course_name>Python</course_name>
+  </info>
+  <info>
+     <course_id>2</course_id>
+     <course_name>PHP</course_name>
+  </info>
+  <info>
+     <course_id>3</course_id>
+     <course_name>Ruby</course_name>
+  </info>
+  <info>
+     <course_id>4</course_id>
+     <course_name>Java</course_name>
+  </info>
+</course_data>

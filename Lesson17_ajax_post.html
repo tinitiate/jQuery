@@ -1,0 +1,67 @@
+<!-- #
+---
+YamlDesc: CONTENT-ARTICLE
+Title: jQuery AJAX
+MetaDescription: 'jQuery AJAX'
+MetaKeywords: 'jQuery AJAX, example code, tutorials'
+Author: Venkata Bhattaram / tinitiate.com
+ContentName: jquery-ajax
+---
+
+# jQuery Ajax
+* Ajax stands for **Asynchronous JavaScript and XML**
+* The main purpose of AJAX is to update the part of a web page using by making server
+  calls without reloading entire webpage.
+* How it works: 
+  * 1. send asynchronous, http request to the server, using the methods
+    * **load()**
+    * This method loads data from server and returns this data to the jQuery block 
+      calling this load() function.
+    * **get()**
+    * This method is used to request data from a jQuery block.
+    * **post()**
+    * This method is used to submit data to a jQuery block.
+  * 2. Get HTML, XML or JSON data as response, use this to update parts of the web page.
+```
+# -->
+<html>
+   <head>
+      <title>jQuery AJAX load()</title>
+      <script type = "text/javascript" 
+      src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+      <script type = "text/javascript" language = "javascript">
+         $(document).ready(function() {
+            $("#LoadDemo").click(function(event) {
+               $('#output').load('load_demo.html');
+            });
+         });
+      </script>
+   </head>
+   <body>
+      <!--  ## DEMO ##
+       Getting AJAX jQuery LOAD() method to read data from an external HTML File
+      --> 
+      <p>Clicking the button gets HTML from load_demo.html file.</p>
+      <p id = "outputHTML"> </p>
+      <input type = "button" id = "LoadDemoHTML" value = "AJAX Load() HTML"/>
+
+      <!--  ## DEMO ##
+       Getting AJAX jQuery LOAD() method to read data from an external JS File
+      --> 
+      <p>Clicking the button gets HTML from load_demo.js file.</p>
+      <p id = "outputJS"> </p>
+      <input type = "button" id = "LoadDemoJS" value = "AJAX Load() JS"/>
+      
+
+      <!--  ## DEMO ##
+       Getting AJAX jQuery LOAD() method to read data from an external XML File
+      --> 
+      <p>Clicking the button gets HTML from load_demo.js file.</p>
+      <p id = "outputXML"> </p>
+      <input type = "button" id = "LoadDemoXML" value = "AJAX Load() XML"/>
+      
+   </body>
+</html>
+<!-- #
+```
+# -->
