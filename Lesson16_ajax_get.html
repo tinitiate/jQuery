@@ -31,8 +31,11 @@ ContentName: jquery-ajax-get
       <title>jQuery AJAX get()</title>
       <script type = "text/javascript"
       src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-
-      <!-- AJAX get()
+   </head>
+   <body>
+      <!-- Getting AJAX jQuery get() method to read data from an external HTML File
+           =====================================================================  -->
+      <!-- jQuery AJAX get()
            jQuery to read data from HTML (or) TXT using AJAX get() -->
       <script type = "text/javascript" language = "javascript">
          $(document).ready(function () {
@@ -43,9 +46,15 @@ ContentName: jquery-ajax-get
             });
          });
       </script>
+      <!-- HTML AJAX get() HTML -->
+      <p>Clicking the button gets data from ajaxHTMLData.html file.</p>
+      <p id = "outputHTML"> </p>
+      <input type = "button" id = "LoadDemoHTML" value = "AJAX get() HTML"/>
 
 
-      <!-- AJAX getJSON(), Read JSON data using AJAX
+      <!-- Getting jQuery AJAX get() JSON method to read data from an external JS File
+           ====================================================================== -->
+      <!-- jQuery AJAX getJSON(), Read JSON data using AJAX
            jQuery to read JSON data into html table using AJAX getJSON() -->
       <script type = "text/javascript" language = "javascript">
          $(document).ready(function () {
@@ -70,9 +79,15 @@ ContentName: jquery-ajax-get
             });
          });
       </script>
+      <!-- HTML AJAX get() JSON -->
+      <p>Clicking the button gets data from ajaxJSONData.js file.</p>
+      <p id = "outputJS"> </p>
+      <input type = "button" id = "LoadDemoJS" value = "AJAX get() JS"/>
 
 
-      <!-- AJAX get() XML
+      <!-- Getting AJAX jQuery LOAD() method to read data from an external XML File
+           ======================================================================-->
+      <!-- jQuery AJAX get() XML
            jQuery to read XML data into html table using AJAX get() -->
       <script type = "text/javascript" language = "javascript">
          $(document).ready(function () {
@@ -80,14 +95,22 @@ ContentName: jquery-ajax-get
                 $.get('ajaxXMLData.xml', function (xml) {
 
                     var l_table_html = "<table>";
+                    var lTraining = "";
 
-                    // Loop through the XML element of "info"
+                    // Read XML non nested element
+                    // ===========================
+                    $(xml).find('training').each(function() {
+                        lTraining = $(this).text();
+                    });
+
+                    // Loop through the XML nested element of "info"
+                    // =============================================
                     $(xml).find('info').each(function() {
 
                       var lCourse_ID = $(this).find('course_id').text();
                       var lCourse_Name = $(this).find('course_name').text();
                       l_table_html = l_table_html + "<tr><td>";
-                      
+
                       // Create table
                       l_table_html = l_table_html + lCourse_ID
                                                   + "</td><td>"
@@ -96,36 +119,22 @@ ContentName: jquery-ajax-get
 
                     });
 
-                l_table_html = l_table_html + "</table>";
-                $('#outputXML').append(l_table_html);
+                    l_table_html = l_table_html + "</table>";
+
+                    // Write Non Nested Element HTML <p> tag
+                    $('#outputXMLNonNestedElement').append(lTraining);
+
+                    // Write Nested Element in HTML Table
+                    $('#outputXMLNestedElement').append(l_table_html);
+
                 });
              });
          });
       </script>
-
-   </head>
-   <body>
-      <!--  ## DEMO ##
-       Getting AJAX jQuery get() method to read data from an external HTML File
-      -->
-      <p>Clicking the button gets data from ajaxHTMLData.html file.</p>
-      <p id = "outputHTML"> </p>
-      <input type = "button" id = "LoadDemoHTML" value = "AJAX get() HTML"/>
-
-
-      <!--  ## DEMO ##
-       Getting AJAX jQuery get() method to read data from an external JS File
-      -->
-      <p>Clicking the button gets data from ajaxJSONData.js file.</p>
-      <p id = "outputJS"> </p>
-      <input type = "button" id = "LoadDemoJS" value = "AJAX get() JS"/>
-
-
-      <!--  ## DEMO ##
-       Getting AJAX jQuery LOAD() method to read data from an external XML File
-      -->
+      <!-- HTML AJAX get() XML -->
       <p>Clicking the button gets data from ajaxXMLData.xml file.</p>
-      <p id = "outputXML"> </p>
+      <p id = "outputXMLNonNestedElement"> </p>
+      <p id = "outputXMLNestedElement"> </p>
       <input type = "button" id = "LoadDemoXML" value = "AJAX get() XML"/>
 
    </body>

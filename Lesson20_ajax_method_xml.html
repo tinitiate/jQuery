@@ -1,0 +1,140 @@
+<!-- #
+---
+YamlDesc: CONTENT-ARTICLE
+Title: jQuery AJAX Method Read XML
+MetaDescription: jQuery AJAX Method Read XML
+MetaKeywords: jQuery AJAX Method, example code, tutorials
+Author: Venkata Bhattaram / tinitiate.com
+ContentName: jquery-ajax-method-read-xml
+---
+
+# jQuery Ajax Method
+* The ajax() method is used to perform an AJAX (asynchronous HTTP) request.
+* `SYNCHRONOUS REQUEST`
+* A synchronous request is a request sent to the webserver, but this type of request
+  makes the browser(client) unresponsive and blocks the client until server request
+  operation is completed.
+* Javascript engine of the browser is blocked during the course of the request and response.
+* `ASYNCHRONOUS REQUEST`
+* An asynchronous request doesn’t block the browser(client) and browser is responsive.
+  and the user can perform other borwser operations.
+* Javascript engine of the browser is NOT blocked during the course of the
+  request and response.
+* Asynchronous APIs do not block. Synchronous call waits and blocks for results to come back.
+
+## Using "$.ajax" function
+* $.ajax(url);
+* $.ajax(url,[options]);
+* URL: A string containing the URL to which the request is sent
+>
+
+### XML File which will be used as URL (ajaxXMLData.xml)
+* Here is a XML file that has XML data
+* It has nested and Non Nested XML data
+* Below is a XML file for a "Course Data"
+* There is a Non Nested "<training>" and Nested elements "<info>"
+```
+# -->
+
+<!-- #
+<?xml version="1.0" encoding="utf-8" ?>
+<course_data>
+  <training>programming</training>
+  <info>
+     <course_id>1</course_id>
+     <course_name>Python</course_name>
+  </info>
+  <info>
+     <course_id>2</course_id>
+     <course_name>PHP</course_name>
+  </info>
+  <info>
+     <course_id>3</course_id>
+     <course_name>Ruby</course_name>
+  </info>
+  <info>
+     <course_id>4</course_id>
+     <course_name>Java</course_name>
+  </info>
+</course_data>
+
+# -->
+<!-- #
+### jQuery Code to read XML file data using $.AJAX function
+```
+# -->
+<html>
+  <head>
+    <title>jQuery $.AJAX() function</title>
+    <script type = "text/javascript"
+      src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script>
+        // Demonstration of $.ajax Function
+        // ================================
+        $(document).ready(function () {
+            $('#LoadDemoXML').click(function() {
+                // ==================================================================
+                // 1. URL: URL or location of the data source
+                // 2. dataType: Format of the Data
+                // 3. success: Action on successful reading, and processing of the source URL.
+                // ==================================================================
+                $.ajax({
+                   url: 'ajaxXMLData.xml',
+                   dataType: 'xml',
+                   success: function(xml) {
+
+                      // Read Single Variable or Non Nested element from XML
+                      // ===================================================
+                      var lTraining = "";
+
+                      $(xml).find('training').each(function() {
+                        lTraining = $(this).text();
+                      });
+                      $('#outputVar').append(lTraining);
+
+                      // Read Array data from JSON
+                      // =========================
+                      // 1. Get the Array Data into a Variable
+                      // 2. Loop throught that variable to read the data
+                      var l_table_html = "<table>";
+                      $(xml).find('info').each(function() {
+
+                        var lCourse_ID = $(this).find('course_id').text();
+                        var lCourse_Name = $(this).find('course_name').text();
+                        l_table_html = l_table_html + "<tr><td>";
+
+                        // Create table
+                        l_table_html = l_table_html + lCourse_ID
+                                                    + "</td><td>"
+                                                    + lCourse_Name
+                                                    + "</td></tr>";
+                      });
+                      l_table_html = l_table_html + "</table>";
+                      $('#outputArray').append(l_table_html);
+                   },
+                   // 4. Action on any errors encountered while reading the file
+                   // ==========================================================
+                   error: function(jqXhr, textStatus, errorMessage) {
+                      $('#outputVar').html('Error Processing ajaxJSONData.js file !');
+                   },
+                   // 5. Type of Fetch from server call
+                   // =================================
+                   type: 'GET'
+                });
+            });
+        });
+
+    </script>
+  </head>
+  <body>
+      <!--  ## DEMO $.ajax Exernal JSON Data ##
+       Getting AJAX jQuery Function to read data from an external JS File -->
+      <p>Clicking the button gets HTML from ajaxXMLData.xml file.</p>
+      <p id = "outputVar"> </p>
+      <p id = "outputArray"> </p>
+      <input type = "button" id = "LoadDemoXML" value = "AJAX get() XML"/>
+  </body>
+</html>
+<!-- #
+```
+# -->

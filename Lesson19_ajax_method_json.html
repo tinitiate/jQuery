@@ -1,0 +1,122 @@
+<!-- #
+---
+YamlDesc: CONTENT-ARTICLE
+Title: jQuery AJAX Method Read JSON data
+MetaDescription: jQuery AJAX Method Read JSON data
+MetaKeywords: jQuery AJAX Method, example code, tutorials
+Author: Venkata Bhattaram / tinitiate.com
+ContentName: jquery-ajax-method-read-json
+---
+
+# jQuery Ajax Method
+* The ajax() method is used to perform an AJAX (asynchronous HTTP) request.
+* `SYNCHRONOUS REQUEST`
+* A synchronous request is a request sent to the webserver, but this type of request
+  makes the browser(client) unresponsive and blocks the client until server request
+  operation is completed.
+* Javascript engine of the browser is blocked during the course of the request and response.
+* `ASYNCHRONOUS REQUEST`
+* An asynchronous request doesn’t block the browser(client) and browser is responsive.
+  and the user can perform other borwser operations.
+* Javascript engine of the browser is NOT blocked during the course of the
+  request and response.
+* Asynchronous APIs do not block. Synchronous call waits and blocks for results to come back.
+
+## Using "$.ajax" function
+* $.ajax(url);
+* $.ajax(url,[options]);
+* URL: A string containing the URL to which the request is sent
+>
+
+### JSON File which will be used as URL (ajaxJSONData.js)
+* Here is a JSON file that has JSON data
+* It has Arrays and Non Array JSON data
+* Below is a JSON file for a "Course Data"
+```
+# -->
+
+<!-- #
+{
+"training":"programming",
+"course_data":
+[ {"course_id": 1, "course_name": "python" },
+  {"course_id": 2, "course_name": "php" },
+  {"course_id": 3, "course_name": "java" },
+  {"course_id": 4, "course_name": "oracle" } ]
+}
+# -->
+<!-- #
+### jQuery Code to read JSON file data using $.AJAX function
+```
+# -->
+<html>
+  <head>
+    <title>jQuery $.AJAX() function</title>
+    <script type = "text/javascript"
+      src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script>
+        // Demonstration of $.ajax Function
+        // ================================
+        $(document).ready(function () {
+            $('#LoadDemoHTML').click(function() {
+                // ==================================================================
+                // 1. URL of the data resource
+                // 2. Format of the Data
+                // 3. Action on successful reading, and processing of the source URL.
+                // ==================================================================
+                $.ajax({
+                   url: 'ajaxJSONData.js',
+                   dataType: 'json',
+                   success: function(data,status,xhr) {
+
+                      // Read Single Variable from JSON
+                      // ==============================
+                      var lTraining = data.training;
+                      $('#outputVar').append(lTraining);
+
+                      // Read Array data from JSON
+                      // =========================
+                      // 1. Get the Array Data into a Variable
+                      // 2. Loop throught that variable to read the data
+                      var course_data_rec = data.course_data;
+                      var l_table_html = "";
+                      
+                      // Loop Through the "course_data_rec" array
+                      for (var i = 0, len = course_data_rec.length; i < len; i++) {
+
+                        l_table_html = l_table_html + "<tr><td>";
+                        // Create table
+                        l_table_html = l_table_html + course_data_rec[i].course_id
+                                                    + "</td><td>"
+                                                    + course_data_rec[i].course_name
+                                                    + "</td></tr>";
+                      }
+                      $('#outputArray').append(l_table_html);
+                   },
+                   // 4. Action on any errors encountered while reading the file
+                   // ==========================================================
+                   error: function(jqXhr, textStatus, errorMessage) {
+                      $('#outputVar').html('Error Processing ajaxJSONData.js file !');
+                   },
+                   // 5. Type of Fetch from server call
+                   // =================================
+                   type: 'GET'
+                });
+            });
+        });
+
+    </script>
+  </head>
+  <body>
+      <!--  ## DEMO $.ajax Exernal JSON Data ##
+       Getting AJAX jQuery Function to read data from an external JS File
+      -->
+      <p>Clicking the button gets HTML from ajaxJSONData.js file.</p>
+      <p id = "outputVar"> </p>
+      <p id = "outputArray"> </p>
+      <input type = "button" id = "LoadDemoHTML" value = "AJAX get() JSON"/>
+  </body>
+</html>
+<!-- #
+```
+# -->
